@@ -179,7 +179,7 @@ const Index = () => {
           <form onSubmit={handleSubmit}>
             {/* Rating */}
             <section
-              className="mb-16 reveal"
+              className="mb-16 reveal p-8 border border-white/5 bg-white/[0.02] backdrop-blur-sm"
               style={{ animationDelay: "200ms" }}
             >
               <div className="flex items-baseline gap-4 mb-6">
@@ -204,7 +204,7 @@ const Index = () => {
             {fields.map((field, i) => (
               <section
                 key={field.num}
-                className="mb-14 relative reveal"
+                className="mb-14 relative reveal p-8 border border-white/5 bg-white/[0.02] backdrop-blur-sm"
                 style={{ animationDelay: `${300 + i * 150}ms` }}
               >
                 <div className="flex items-baseline gap-4 mb-5">
@@ -243,7 +243,7 @@ const Index = () => {
 
             {/* Referrals Section */}
             <section
-              className="mb-14 relative reveal"
+              className="mb-14 relative reveal p-8 border border-white/5 bg-white/[0.02] backdrop-blur-sm"
               style={{ animationDelay: `${300 + fields.length * 150}ms` }}
             >
               <div className="flex items-baseline gap-4 mb-5">
@@ -262,7 +262,7 @@ const Index = () => {
 
               <div className="space-y-6">
                 {referrals.map((ref, i) => (
-                  <div key={i} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 border border-border p-6 relative group">
+                  <div key={i} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 border border-border p-6 relative group bg-surface-1/40">
                     {referrals.length > 1 && (
                       <button
                         type="button"

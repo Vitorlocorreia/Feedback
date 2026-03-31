@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -70,7 +70,7 @@
   h4,
   h5,
   h6 {
-    font-family: 'Bodoni Moda', serif;
+    @apply font-display font-bold;
   }
 
   ::selection {
@@ -128,9 +128,9 @@
   padding: 1.25rem 1rem;
   width: 100%;
   color: #ffffff;
-  font-family: Inter, sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.95rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.01em;
   transition: border-color 0.4s ease;
   outline: none;
@@ -153,9 +153,9 @@
   padding: 1.25rem;
   width: 100%;
   color: hsl(0 0% 96%);
-  font-family: Inter, sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.95rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.01em;
   transition: all 0.4s ease;
   outline: none;
@@ -192,10 +192,10 @@
 
 /* Number index */
 .field-number {
-  font-family: 'Bodoni Moda', serif;
-  font-style: italic;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
   color: hsl(43 56% 52% / 0.25);
-  font-size: 4rem;
+  font-size: 4.5rem;
   line-height: 1;
   position: absolute;
   right: 0;

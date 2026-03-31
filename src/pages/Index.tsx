@@ -13,25 +13,25 @@ const fields = [
   {
     num: "01",
     label: "Qualidade Técnica",
-    sub: "Precisão dos dados, design dos relatórios, clareza visual",
+    sub: "Produção de Conteúdo, Organização, Atendimento, Clareza de Dados",
     type: "input" as const,
   },
   {
     num: "02",
     label: "Entrega Estratégica",
-    sub: "Alinhamento com seus objetivos e timing",
+    sub: "Alinhamento com os seus objetivos",
     type: "input" as const,
   },
   {
     num: "03",
-    label: "Sugestões de Melhoria",
+    label: "Sugestões de Melhorias",
     sub: "O que podemos fazer diferente?",
     type: "textarea" as const,
   },
   {
     num: "04",
-    label: "Visão de Futuro",
-    sub: "Novas frentes, ideias ousadas, oportunidades",
+    label: "O que você mais gosta na nossa empresa?",
+    sub: "Nossos pontos fortes",
     type: "textarea" as const,
   },
 ];
@@ -87,12 +87,12 @@ const Index = () => {
         "⭐ Satisfação Geral": `${rating} Estrelas`,
         "01 - Qualidade Técnica": values[0] || "Não preenchido",
         "02 - Entrega Estratégica": values[1] || "Não preenchido",
-        "03 - Sugestões de Melhoria": values[2] || "Não preenchido",
-        "04 - Visão de Futuro": values[3] || "Não preenchido",
+        "03 - Sugestões de Melhorias": values[2] || "Não preenchido",
+        "04 - O que você mais gosta": values[3] || "Não preenchido",
         "05 - Indicações": referralsText || "Nenhuma indicação cadastrada.",
       };
 
-      const res = await fetch("https://formsubmit.co/ajax/vitorlocorreia282@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/jotamarketingbrasil@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -127,12 +127,12 @@ const Index = () => {
           <h1 className="font-display italic text-5xl md:text-7xl text-foreground mb-6">
             Obrigado<span className="text-gold">.</span>
           </h1>
-          <p className="text-dim text-base font-body font-light leading-relaxed max-w-sm mx-auto">
+          <p className="text-dim text-base font-body font-normal leading-relaxed max-w-sm mx-auto">
             Sua perspectiva é o que nos separa do comum.
             <br />A JOTA agradece a confiança.
           </p>
           <div className="mt-12 flex justify-center">
-            <img src={logoJota} alt="JOTA" className="w-12 h-12 opacity-40" />
+            <img src={logoJota} alt="JOTA" className="w-20 h-20 opacity-40" />
           </div>
         </div>
       </div>
@@ -155,7 +155,7 @@ const Index = () => {
             className={`mb-20 transition-all duration-1000 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
             <div className="flex items-start justify-between mb-16">
-              <img src={logoJota} alt="JOTA" className="w-14 h-14" />
+              <img src={logoJota} alt="JOTA" className="w-24 h-24" />
               <p className="text-dim text-[10px] uppercase tracking-[0.3em] font-body text-right leading-relaxed">
                 Marketing Esportivo
               </p>
@@ -183,14 +183,14 @@ const Index = () => {
               style={{ animationDelay: "200ms" }}
             >
               <div className="flex items-baseline gap-4 mb-6">
-                <span className="font-display italic text-gold/20 text-5xl leading-none">
+                <span className="font-display font-bold text-gold/20 text-7xl leading-none select-none">
                   00
                 </span>
                 <div>
                   <h2 className="font-display text-xl text-foreground">
                     Satisfação Geral
                   </h2>
-                  <p className="text-dim text-sm font-body font-light mt-1">
+                  <p className="text-dim text-sm font-body font-normal mt-1">
                     Como foi a experiência este mês?
                   </p>
                 </div>
@@ -208,14 +208,14 @@ const Index = () => {
                 style={{ animationDelay: `${300 + i * 150}ms` }}
               >
                 <div className="flex items-baseline gap-4 mb-5">
-                  <span className="font-display italic text-gold/20 text-5xl leading-none select-none">
+                  <span className="font-display font-bold text-gold/20 text-7xl leading-none select-none">
                     {field.num}
                   </span>
                   <div>
                     <h2 className="font-display text-xl text-foreground">
                       {field.label}
                     </h2>
-                    <p className="text-dim text-sm font-body font-light mt-1">
+                    <p className="text-dim text-sm font-body font-normal mt-1">
                       {field.sub}
                     </p>
                   </div>
@@ -247,14 +247,14 @@ const Index = () => {
               style={{ animationDelay: `${300 + fields.length * 150}ms` }}
             >
               <div className="flex items-baseline gap-4 mb-5">
-                <span className="font-display italic text-gold/20 text-5xl leading-none select-none">
+                <span className="font-display font-bold text-gold/20 text-7xl leading-none select-none">
                   05
                 </span>
                 <div>
                   <h2 className="font-display text-xl text-foreground">
                     Indique e Ganhe
                   </h2>
-                  <p className="text-dim text-sm font-body font-light mt-1">
+                  <p className="text-dim text-sm font-body font-normal mt-1">
                     Conhece alguém que precisa do nosso nível de entrega? Deixe contatos e ganhe desconto na mensalidade.
                   </p>
                 </div>

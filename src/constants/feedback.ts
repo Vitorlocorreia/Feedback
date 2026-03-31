@@ -25,4 +25,6 @@ export const FEEDBACK_FIELDS = [
     },
 ];
 
-export const SUBMISSION_EMAIL = "jotamarketingbrasil@gmail.com";
+// Acesse https://web3forms.com/ e coloque seu email para gerar uma chave (Acess Key) gratuita.
+// Cole a chave (ex: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx") abaixo:
+export const WEB3FORMS_ACCESS_KEY = "f59d4ebc-5df2-4072-8af2-374b350bf22a";

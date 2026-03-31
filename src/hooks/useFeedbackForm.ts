@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
-import { FEEDBACK_FIELDS, SUBMISSION_EMAIL } from "@/constants/feedback";
+import { FEEDBACK_FIELDS, WEB3FORMS_ACCESS_KEY } from "@/constants/feedback";
 
 export interface Referral {
     name: string;
@@ -53,6 +53,11 @@ export const useFeedbackForm = () => {
             return;
         }
 
+        if (!WEB3FORMS_ACCESS_KEY) {
+            toast.error("Chave do Web3Forms não configurada!");
+            return;
+        }
+
         setIsSubmitting(true);
 
         try {
@@ -62,8 +67,9 @@ export const useFeedbackForm = () => {
                 .join("\n");
 
             const payload = {
-                _subject: "✨ Novo Feedback High-Ticket | JOTA",
-                _template: "box",
+                access_key: WEB3FORMS_ACCESS_KEY,
+                subject: "✨ Novo Feedback High-Ticket | JOTA",
+                from_name: "Portal de Feedback",
                 "👤 Cliente": clientInfo.name || "N/A",
                 "🏢 Empresa": clientInfo.company || "N/A",
                 "⭐ Satisfação Geral": `${rating} Estrelas`,
@@ -74,22 +80,27 @@ export const useFeedbackForm = () => {
                 "05 - Indicações": referralsText || "Nenhuma indicação cadastrada.",
             };
 
-            const res = await fetch(`https://formsubmit.co/ajax/${SUBMISSION_EMAIL}`, {
+            const res = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    Accept: "application/json",
+                    Accept: "application/json"
                 },
                 body: JSON.stringify(payload),
             });
 
-            if (!res.ok) throw new Error("Falha no envio");
+            const result = await res.json();
+
+            if (!res.ok || !result.success) {
+                console.error("Server Response:", result);
+                throw new Error("O serviço de e-mail recusou a requisição.");
+            }
 
             setSubmitted(true);
             toast.success("Feedback enviado com sucesso!");
         } catch (error) {
-            console.error(error);
-            toast.error("Ocorreu um erro ao enviar seu feedback. Tente novamente.");
+            console.error("Submission error details:", error);
+            toast.error("Ocorreu um erro de conexão. Tente novamente.");
         } finally {
             setIsSubmitting(false);
         }

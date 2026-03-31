@@ -25,4 +25,4 @@ export const FEEDBACK_FIELDS = [
     },
 ];
 
-export const SUBMISSION_EMAIL = "vitorlocorreia282@gmail.com";
+export const SUBMISSION_EMAIL = "jotamarketingbrasil@gmail.com";
